@@ -13,4 +13,26 @@ export const GlobalStyles = {
     gray500: "#39324a",
     gray700: "#221c30",
   },
+
+  screenContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  viewerContainer: {
+    padding: 12,
+    marginVertical: 8,
+    borderRadius: 6,
+  },
+
+  buttonContainer: {},
+
+  shadowGenerator: {
+    elevation: 5,
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    shadowColor: "#39324a",
+  },
 };

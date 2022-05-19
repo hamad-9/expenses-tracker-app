@@ -17,9 +17,9 @@ export default ExpensesSummery;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 8,
+    ...GlobalStyles.viewerContainer,
+    ...GlobalStyles.shadowGenerator,
     backgroundColor: GlobalStyles.colors.primary50,
-    borderRadius: 6,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

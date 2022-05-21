@@ -9,6 +9,7 @@ export const GlobalStyles = {
     primary800: "#200364",
     accent500: "#f7bc0c",
     error50: "#fcc4e4",
+    error100: "#fcdcbf",
     error500: "#9b095c",
     gray500: "#39324a",
     gray700: "#221c30",
@@ -35,4 +36,12 @@ export const GlobalStyles = {
     shadowRadius: 5,
     shadowColor: "#39324a",
   },
+};
+
+export const Colors = {
+  primary100: "#f9beda",
+  primary500: "#c30b64",
+  primary800: "#610440",
+  error100: "#fcdcbf",
+  error500: "#f37c13",
 };

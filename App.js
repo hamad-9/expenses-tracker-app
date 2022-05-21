@@ -1,27 +1,44 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import ExpensesContextProvider from "./store/expenses-context";
-import Navigation from "./navigation/navigation";
+import AppNavigator from "./navigation/AppNavigator";
+import AuthContextProvider from "./store/auth-context";
+import { AuthContext } from "./store/auth-context";
+
+import { useContext, useEffect } from "react";
+
+function RootNavigator() {
+  // const [isTryingLogin, setIsTryingLogin] = useState(true);
+  const authCtx = useContext(AuthContext);
+  useEffect(() => {
+    async function fetchToken() {
+      const storedToken = await AsyncStorage.getItem("token");
+
+      if (storedToken) {
+        authCtx.authenticate(storedToken);
+      }
+      // setIsTryingLogin(false);
+    }
+    fetchToken();
+  }, []);
+
+  // if (isTryingLogin) {
+  //   return <AppLoading />;
+  // }
+
+  return <AppNavigator />;
+}
 
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
       <ExpensesContextProvider>
-        <NavigationContainer>
-          <Navigation />
-        </NavigationContainer>
+        <AuthContextProvider>
+          <RootNavigator />
+        </AuthContextProvider>
       </ExpensesContextProvider>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

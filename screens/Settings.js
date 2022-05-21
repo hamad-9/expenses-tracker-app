@@ -4,7 +4,7 @@ import { GlobalStyles } from "../constants/styles";
 function Settings() {
   return (
     <View style={styles.container}>
-      <Text>Settings</Text>
+      <Text style={{ fontSize: 24, color: "white" }}>Settings</Text>
     </View>
   );
 }
@@ -12,6 +12,7 @@ function Settings() {
 export default Settings;
 const styles = StyleSheet.create({
   container: {
-    ...GlobalStyles.container,
+    ...GlobalStyles.screenContainer,
+    backgroundColor: GlobalStyles.colors.primary700,
   },
 });

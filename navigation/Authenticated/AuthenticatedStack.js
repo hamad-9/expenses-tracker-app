@@ -1,10 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ManageExpense from "../../screens/ManageExpense";
-
 import { GlobalStyles } from "../../constants/styles";
-import BottomTabNavigator from "./BottomTabNavigator";
 import DrawerNavigator from "./DrawerNavigator";
-
+import IconButton from "../../components/ui/IconButton";
 const Stack = createNativeStackNavigator();
 
 function AuthenticatedStack() {

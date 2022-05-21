@@ -3,6 +3,7 @@ import ManageExpense from "../../screens/ManageExpense";
 
 import { GlobalStyles } from "../../constants/styles";
 import BottomTabNavigator from "./BottomTabNavigator";
+import DrawerNavigator from "./DrawerNavigator";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,8 +16,8 @@ function AuthenticatedStack() {
       }}
     >
       <Stack.Screen
-        name="BottomTabNavigator"
-        component={BottomTabNavigator}
+        name="DrawerNavigator"
+        component={DrawerNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen

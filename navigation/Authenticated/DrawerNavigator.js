@@ -4,9 +4,13 @@ import Settings from "../../screens/Settings";
 import BottomTabNavigator from "./BottomTabNavigator";
 import { GlobalStyles } from "../../constants/styles";
 import IconButton from "../../components/ui/IconButton";
+import { View } from "react-native";
+import { AuthContext } from "../../store/auth-context";
+import { useContext } from "react";
 const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
+  const authCtx = useContext(AuthContext);
   return (
     <Drawer.Navigator
       screenOptions={({ navigation }) => ({
